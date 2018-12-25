@@ -1,0 +1,21 @@
+//
+//  PrefixHeader.pch
+//  AwesomeVKClient
+//
+//  Created by Никита on 25/12/2018.
+//  Copyright © 2018 Никита. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#endif /* PrefixHeader_pch */
+
+#ifdef __OBJC__
+
+#import "NSString+StringBetween.h"
+
+#import "Constants.h"
+#import "Utils.h"
+
+#endif
