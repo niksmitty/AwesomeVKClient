@@ -55,6 +55,9 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
         cell.backgroundColor = [UIColor clearColor];
+        if (indexPath.row == 1) {
+            cell.userInteractionEnabled = NO;
+        }
     }
     
     cell.textLabel.text = _functionItems[indexPath.row];
@@ -65,6 +68,7 @@
 #pragma mark - UITableViewDelegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [self performSegueWithIdentifier:[NSString stringWithFormat:@"SHOW_DETAILED_%d", (int)indexPath.row] sender:self];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 

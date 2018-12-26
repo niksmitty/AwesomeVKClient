@@ -21,6 +21,8 @@
 		AB69C47E21D2456D00419854 /* NSString+StringBetween.m in Sources */ = {isa = PBXBuildFile; fileRef = AB69C47D21D2456D00419854 /* NSString+StringBetween.m */; };
 		AB69C48121D24E1500419854 /* FunctionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB69C48021D24E1500419854 /* FunctionsViewController.m */; };
 		AB69C48421D259B000419854 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = AB69C48321D259B000419854 /* Utils.m */; };
+		AB69C48821D281C100419854 /* SoundRecordingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB69C48721D281C100419854 /* SoundRecordingViewController.m */; };
+		AB69C48B21D284AF00419854 /* GeofenceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB69C48A21D284AF00419854 /* GeofenceViewController.m */; };
 		F0BA3D3E5666893AA3DB2F53 /* libPods-AwesomeVKClient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B824D74F66D49FE89B708EB6 /* libPods-AwesomeVKClient.a */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +52,10 @@
 		AB69C48021D24E1500419854 /* FunctionsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FunctionsViewController.m; sourceTree = "<group>"; };
 		AB69C48221D259B000419854 /* Utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
 		AB69C48321D259B000419854 /* Utils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
+		AB69C48621D281C100419854 /* SoundRecordingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SoundRecordingViewController.h; sourceTree = "<group>"; };
+		AB69C48721D281C100419854 /* SoundRecordingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SoundRecordingViewController.m; sourceTree = "<group>"; };
+		AB69C48921D284AF00419854 /* GeofenceViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GeofenceViewController.h; sourceTree = "<group>"; };
+		AB69C48A21D284AF00419854 /* GeofenceViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GeofenceViewController.m; sourceTree = "<group>"; };
 		AF2D17C0DB059DC857574198 /* Pods-AwesomeVKClient.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AwesomeVKClient.release.xcconfig"; path = "Pods/Target Support Files/Pods-AwesomeVKClient/Pods-AwesomeVKClient.release.xcconfig"; sourceTree = "<group>"; };
 		B824D74F66D49FE89B708EB6 /* libPods-AwesomeVKClient.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AwesomeVKClient.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -142,6 +148,10 @@
 				AB69C45A21D1352200419854 /* AuthViewController.m */,
 				AB69C47F21D24E1500419854 /* FunctionsViewController.h */,
 				AB69C48021D24E1500419854 /* FunctionsViewController.m */,
+				AB69C48621D281C100419854 /* SoundRecordingViewController.h */,
+				AB69C48721D281C100419854 /* SoundRecordingViewController.m */,
+				AB69C48921D284AF00419854 /* GeofenceViewController.h */,
+				AB69C48A21D284AF00419854 /* GeofenceViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -264,7 +274,9 @@
 				AB69C48421D259B000419854 /* Utils.m in Sources */,
 				AB69C46621D1352400419854 /* main.m in Sources */,
 				AB69C45821D1352200419854 /* AppDelegate.m in Sources */,
+				AB69C48821D281C100419854 /* SoundRecordingViewController.m in Sources */,
 				AB69C47521D227F900419854 /* VkAPIManager.m in Sources */,
+				AB69C48B21D284AF00419854 /* GeofenceViewController.m in Sources */,
 				AB69C47E21D2456D00419854 /* NSString+StringBetween.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -88,11 +88,64 @@
                     </view>
                     <connections>
                         <outlet property="tableView" destination="VAS-6q-b8W" id="WkC-aZ-TyT"/>
+                        <segue destination="MUE-hy-KWv" kind="show" identifier="SHOW_DETAILED_0" id="5xD-v8-4fz"/>
+                        <segue destination="nMM-p4-Mjg" kind="show" identifier="SHOW_DETAILED_2" id="vdk-Of-Sg2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H4m-W8-vkQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1683.75" y="-582.04225352112678"/>
+        </scene>
+        <!--Sound Recording View Controller-->
+        <scene sceneID="mcN-V3-i2l">
+            <objects>
+                <viewController id="MUE-hy-KWv" customClass="SoundRecordingViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qxg-e4-AMj">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Srx-b8-HzK">
+                                <rect key="frame" x="110" y="234" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="1XP-8z-ovY"/>
+                                    <constraint firstAttribute="width" constant="100" id="uWO-RE-8ja"/>
+                                </constraints>
+                                <state key="normal" image="microphone"/>
+                                <connections>
+                                    <action selector="soundRecordButtonTouchDown:" destination="MUE-hy-KWv" eventType="touchDown" id="TO5-qf-jKs"/>
+                                    <action selector="soundRecordButtonTouchUpInside:" destination="MUE-hy-KWv" eventType="touchUpInside" id="e59-lh-tHn"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Srx-b8-HzK" firstAttribute="centerX" secondItem="qxg-e4-AMj" secondAttribute="centerX" id="ENm-5g-CgL"/>
+                            <constraint firstItem="Srx-b8-HzK" firstAttribute="centerY" secondItem="qxg-e4-AMj" secondAttribute="centerY" id="qw1-ta-VuK"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="gSG-eq-5RU"/>
+                    </view>
+                    <connections>
+                        <outlet property="soundRecordButton" destination="Srx-b8-HzK" id="Q21-Y6-cUr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LLY-8J-i2b" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2447" y="-582"/>
+        </scene>
+        <!--Geofence View Controller-->
+        <scene sceneID="zjI-EL-Jzm">
+            <objects>
+                <viewController id="nMM-p4-Mjg" customClass="GeofenceViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Noy-3A-60X">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="bSQ-ea-dz5"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mNK-ua-IhE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2447" y="180"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="6o8-ar-dT2">
@@ -114,4 +167,7 @@
             <point key="canvasLocation" x="135" y="-582.04225352112678"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="microphone" width="384" height="384"/>
+    </resources>
 </document>
