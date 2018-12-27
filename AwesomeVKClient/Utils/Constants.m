@@ -22,6 +22,9 @@ NSString* const redirectUri = @"";
 NSString* const responseType = @"token";
 NSString* const apiVersion = @"5.92";
 
+NSString* const audioFileExtension = @"flac";
+NSString* const zipFileExtension = @"zip";
+
 @implementation Constants
 
 @end

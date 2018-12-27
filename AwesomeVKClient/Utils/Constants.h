@@ -21,6 +21,9 @@ extern NSString* const redirectUri;
 extern NSString* const responseType;
 extern NSString* const apiVersion;
 
+extern NSString* const audioFileExtension;
+extern NSString* const zipFileExtension;
+
 @interface Constants : NSObject
 
 @end

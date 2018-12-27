@@ -116,21 +116,38 @@
                                     <action selector="soundRecordButtonTouchUpInside:" destination="MUE-hy-KWv" eventType="touchUpInside" id="e59-lh-tHn"/>
                                 </connections>
                             </button>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="xsq-vE-sGn">
+                                <rect key="frame" x="10" y="546" width="300" height="2"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </progressView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dxS-PN-c1t">
+                                <rect key="frame" x="160" y="536" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="dxS-PN-c1t" firstAttribute="centerX" secondItem="qxg-e4-AMj" secondAttribute="centerX" id="3ys-Cb-VJL"/>
+                            <constraint firstAttribute="trailing" secondItem="xsq-vE-sGn" secondAttribute="trailing" constant="10" id="Df7-cM-7ae"/>
                             <constraint firstItem="Srx-b8-HzK" firstAttribute="centerX" secondItem="qxg-e4-AMj" secondAttribute="centerX" id="ENm-5g-CgL"/>
+                            <constraint firstItem="xsq-vE-sGn" firstAttribute="leading" secondItem="qxg-e4-AMj" secondAttribute="leading" constant="10" id="Jj8-h5-Jwq"/>
+                            <constraint firstItem="gSG-eq-5RU" firstAttribute="bottom" secondItem="xsq-vE-sGn" secondAttribute="bottom" constant="20" id="dkT-ol-mIo"/>
                             <constraint firstItem="Srx-b8-HzK" firstAttribute="centerY" secondItem="qxg-e4-AMj" secondAttribute="centerY" id="qw1-ta-VuK"/>
+                            <constraint firstItem="xsq-vE-sGn" firstAttribute="top" secondItem="dxS-PN-c1t" secondAttribute="bottom" constant="10" id="y6o-02-seS"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gSG-eq-5RU"/>
                     </view>
                     <connections>
+                        <outlet property="progressLabel" destination="dxS-PN-c1t" id="jTb-fp-17i"/>
+                        <outlet property="progressView" destination="xsq-vE-sGn" id="usb-TW-Mp4"/>
                         <outlet property="soundRecordButton" destination="Srx-b8-HzK" id="Q21-Y6-cUr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LLY-8J-i2b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2447" y="-582"/>
+            <point key="canvasLocation" x="2446.875" y="-582.04225352112678"/>
         </scene>
         <!--Geofence View Controller-->
         <scene sceneID="zjI-EL-Jzm">
@@ -168,6 +185,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="microphone" width="384" height="384"/>
+        <image name="microphone" width="120" height="120"/>
     </resources>
 </document>

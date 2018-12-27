@@ -29,10 +29,6 @@
     tableView.delegate = self;
     
     _functionItems = @[@"Запись звука с микрофона", @"Фото", @"Geofence"];
-    
-    [[VkAPIManager sharedInstance] getProfileInfoWithCompletionHandler:^(NSError *error, NSDictionary *result) {
-        NSLog(@"%@", result);
-    }];
 }
 
 #pragma mark - Actions

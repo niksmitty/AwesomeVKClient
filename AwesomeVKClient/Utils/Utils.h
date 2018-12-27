@@ -11,5 +11,7 @@
 @interface Utils : NSObject
 
 + (void)clearVkCookies;
++ (NSString*)getDocumentsDirectory;
++ (NSString*)replacePathExtensionInPath:(NSString*)path withNext:(NSString*)newPathExt;
 
 @end

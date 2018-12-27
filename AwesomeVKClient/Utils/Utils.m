@@ -20,4 +20,12 @@
     }
 }
 
++ (NSString*)getDocumentsDirectory {
+    return [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+}
+
++ (NSString*)replacePathExtensionInPath:(NSString*)path withNext:(NSString*)newPathExt {
+    return [[path stringByDeletingPathExtension] stringByAppendingPathExtension:newPathExt];
+}
+
 @end
