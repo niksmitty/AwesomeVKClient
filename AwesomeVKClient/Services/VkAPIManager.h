@@ -15,5 +15,12 @@
 - (void)setAccessToken:(NSString*)accessToken;
 
 - (void)getProfileInfoWithCompletionHandler:(void (^)(NSError *error, NSDictionary *result))completion;
+- (void)getWallUploadServerWithCompletionHandler:(void (^)(NSError *error, NSDictionary *result))completion;
+- (void)postUploadFileWithUrl:(NSString*)uploadUrl
+                  andFilePath:(NSString*)filePath
+ andProgressCompletionHandler:(void (^)(double fractionCompleted))progressCompletion
+        withCompletionHandler:(void (^)(NSError *error, NSDictionary *result))completion;
+- (void)getDocsSaveForFile:(NSString*)file withCompletionHandler:(void (^)(NSError *error, NSDictionary *result))completion;
+- (void)getWallPostWithAttachments:(NSString*)attachments withCompletionHandler:(void (^)(NSError *error, NSDictionary *result))completion;
 
 @end
