@@ -44,7 +44,7 @@ xcuserdata
 
 ####
 # XCode 4 workspaces - more detailed
-!xcshareddata
+xcshareddata
 !default.xcworkspace
 *.xcworkspacedata
 *.xcworkspace
