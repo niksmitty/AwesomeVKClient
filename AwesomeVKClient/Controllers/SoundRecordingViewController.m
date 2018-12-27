@@ -8,11 +8,17 @@
 
 #import "SoundRecordingViewController.h"
 
+#import <SSZipArchive/SSZipArchive.h>
+#import "VkAPIManager.h"
+#import "RecordService.h"
+
 @interface SoundRecordingViewController ()
 
 @end
 
-@implementation SoundRecordingViewController
+@implementation SoundRecordingViewController {
+    RecordService *recordService;
+}
 
 #pragma mark - View Lifecycle
 
@@ -22,6 +28,9 @@
     self.navigationItem.title = @"Запись звука с микрофона";
     
     [self setupUI];
+    
+    recordService = [[RecordService alloc] initWithOutputFileName:@"audioFile"];
+    [recordService prepareToRecord];
 }
 
 - (void)setupUI {
@@ -38,6 +47,40 @@
 
 - (IBAction)soundRecordButtonTouchUpInside:(UIButton *)sender {
     [sender.layer removeAllAnimations];
+    
+    [recordService stop];
+    
+    NSString *outputFilePath = [recordService outputFilePath];
+    NSString *zipFilePath = [Utils replacePathExtensionInPath:outputFilePath withNext:zipFileExtension];
+    
+    [SSZipArchive createZipFileAtPath:zipFilePath
+                     withFilesAtPaths:@[outputFilePath]];
+    
+    [[VkAPIManager sharedInstance] getWallUploadServerWithCompletionHandler:^(NSError *error, NSDictionary *result) {
+        [[VkAPIManager sharedInstance] postUploadFileWithUrl:result[@"response"][@"upload_url"]
+                                                 andFilePath:zipFilePath
+                                andProgressCompletionHandler:^(double fractionCompleted) {
+                                    NSLog(@"Progress: %f", fractionCompleted);
+                                    dispatch_async(dispatch_get_main_queue(), ^{
+                                        self->progressLabel.text = [NSString stringWithFormat:@"%d%%", (int)(fractionCompleted * 100)];
+                                        self->progressView.progress = fractionCompleted;
+                                    });
+                                }
+                                       withCompletionHandler:^(NSError *error, NSDictionary *result) {
+                                           [[VkAPIManager sharedInstance] getDocsSaveForFile:result[@"file"]
+                                                                       withCompletionHandler:^(NSError *error, NSDictionary *result) {
+                                               NSDictionary *response = result[@"response"];
+                                               NSDictionary *doc = response[@"doc"];
+                                               NSString *type = response[@"type"];
+                                               NSString *owner_id = doc[@"owner_id"];
+                                               NSString *doc_id = doc[@"id"];
+                                               NSString *attachmentsString = [NSString stringWithFormat:@"%@%@_%@", type, owner_id, doc_id];
+                                               [[VkAPIManager sharedInstance] getWallPostWithAttachments:attachmentsString withCompletionHandler:^(NSError *error, NSDictionary *result) {
+                                                   
+                                               }];
+                                           }];
+                                       }];
+    }];
 }
 
 - (IBAction)soundRecordButtonTouchDown:(UIButton *)sender {
@@ -49,6 +92,8 @@
                          sender.transform = CGAffineTransformIdentity;
                      }
                      completion:^(BOOL finished){}];
+    
+    [recordService record];
 }
 
 @end

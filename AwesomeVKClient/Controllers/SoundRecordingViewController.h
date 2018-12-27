@@ -10,6 +10,8 @@
 
 @interface SoundRecordingViewController : UIViewController {
     __weak IBOutlet UIButton *soundRecordButton;
+    __weak IBOutlet UILabel *progressLabel;
+    __weak IBOutlet UIProgressView *progressView;
 }
 
 @end
