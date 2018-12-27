@@ -18,6 +18,9 @@
 
 @implementation SoundRecordingViewController {
     RecordService *recordService;
+    LocationService *locationService;
+    
+    CLLocationCoordinate2D _currentCoordinate;
 }
 
 #pragma mark - View Lifecycle
@@ -31,6 +34,10 @@
     
     recordService = [[RecordService alloc] initWithOutputFileName:@"audioFile"];
     [recordService prepareToRecord];
+    
+    locationService = [[LocationService alloc] init];
+    locationService.locationServiceDelegate = self;
+    [locationService startUpdatingLocation];
 }
 
 - (void)setupUI {
@@ -60,7 +67,6 @@
         [[VkAPIManager sharedInstance] postUploadFileWithUrl:result[@"response"][@"upload_url"]
                                                  andFilePath:zipFilePath
                                 andProgressCompletionHandler:^(double fractionCompleted) {
-                                    NSLog(@"Progress: %f", fractionCompleted);
                                     dispatch_async(dispatch_get_main_queue(), ^{
                                         self->progressLabel.text = [NSString stringWithFormat:@"%d%%", (int)(fractionCompleted * 100)];
                                         self->progressView.progress = fractionCompleted;
@@ -75,7 +81,10 @@
                                                NSString *owner_id = doc[@"owner_id"];
                                                NSString *doc_id = doc[@"id"];
                                                NSString *attachmentsString = [NSString stringWithFormat:@"%@%@_%@", type, owner_id, doc_id];
-                                               [[VkAPIManager sharedInstance] getWallPostWithAttachments:attachmentsString withCompletionHandler:^(NSError *error, NSDictionary *result) {
+                                               [[VkAPIManager sharedInstance] getWallPostWithAttachments:attachmentsString
+                                                                                             andLatitude:[NSNumber numberWithDouble:self->_currentCoordinate.latitude]
+                                                                                            andLongitude:[NSNumber numberWithDouble:self->_currentCoordinate.longitude]
+                                                                                   withCompletionHandler:^(NSError *error, NSDictionary *result) {
                                                    
                                                }];
                                            }];
@@ -94,6 +103,12 @@
                      completion:^(BOOL finished){}];
     
     [recordService record];
+}
+
+#pragma mark - LocationServiceDelegate
+
+- (void)locationService:(LocationService *)locationService didUpdateLocation:(CLLocationCoordinate2D)coordinate {
+    _currentCoordinate = coordinate;
 }
 
 @end

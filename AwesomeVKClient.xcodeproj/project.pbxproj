@@ -25,6 +25,8 @@
 		AB69C48B21D284AF00419854 /* GeofenceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB69C48A21D284AF00419854 /* GeofenceViewController.m */; };
 		AB69C48D21D39ABB00419854 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB69C48C21D39ABB00419854 /* AVFoundation.framework */; };
 		AB69C49021D4A7D600419854 /* RecordService.m in Sources */ = {isa = PBXBuildFile; fileRef = AB69C48F21D4A7D600419854 /* RecordService.m */; };
+		AB69C49221D4D4D100419854 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB69C49121D4D4D100419854 /* CoreLocation.framework */; };
+		AB69C49521D4D4FA00419854 /* LocationService.m in Sources */ = {isa = PBXBuildFile; fileRef = AB69C49421D4D4FA00419854 /* LocationService.m */; };
 		F0BA3D3E5666893AA3DB2F53 /* libPods-AwesomeVKClient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B824D74F66D49FE89B708EB6 /* libPods-AwesomeVKClient.a */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +63,9 @@
 		AB69C48C21D39ABB00419854 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		AB69C48E21D4A7D600419854 /* RecordService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecordService.h; sourceTree = "<group>"; };
 		AB69C48F21D4A7D600419854 /* RecordService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecordService.m; sourceTree = "<group>"; };
+		AB69C49121D4D4D100419854 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		AB69C49321D4D4FA00419854 /* LocationService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocationService.h; sourceTree = "<group>"; };
+		AB69C49421D4D4FA00419854 /* LocationService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocationService.m; sourceTree = "<group>"; };
 		AF2D17C0DB059DC857574198 /* Pods-AwesomeVKClient.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AwesomeVKClient.release.xcconfig"; path = "Pods/Target Support Files/Pods-AwesomeVKClient/Pods-AwesomeVKClient.release.xcconfig"; sourceTree = "<group>"; };
 		B824D74F66D49FE89B708EB6 /* libPods-AwesomeVKClient.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AwesomeVKClient.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -70,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB69C49221D4D4D100419854 /* CoreLocation.framework in Frameworks */,
 				AB69C48D21D39ABB00419854 /* AVFoundation.framework in Frameworks */,
 				F0BA3D3E5666893AA3DB2F53 /* libPods-AwesomeVKClient.a in Frameworks */,
 			);
@@ -125,6 +131,8 @@
 				AB69C47421D227F900419854 /* VkAPIManager.m */,
 				AB69C48E21D4A7D600419854 /* RecordService.h */,
 				AB69C48F21D4A7D600419854 /* RecordService.m */,
+				AB69C49321D4D4FA00419854 /* LocationService.h */,
+				AB69C49421D4D4FA00419854 /* LocationService.m */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -176,6 +184,7 @@
 		F4ED4F7492545FC906846C0B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AB69C49121D4D4D100419854 /* CoreLocation.framework */,
 				AB69C48C21D39ABB00419854 /* AVFoundation.framework */,
 				B824D74F66D49FE89B708EB6 /* libPods-AwesomeVKClient.a */,
 			);
@@ -287,6 +296,7 @@
 				AB69C48821D281C100419854 /* SoundRecordingViewController.m in Sources */,
 				AB69C47521D227F900419854 /* VkAPIManager.m in Sources */,
 				AB69C48B21D284AF00419854 /* GeofenceViewController.m in Sources */,
+				AB69C49521D4D4FA00419854 /* LocationService.m in Sources */,
 				AB69C47E21D2456D00419854 /* NSString+StringBetween.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

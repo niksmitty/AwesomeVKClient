@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LocationService.h"
 
-@interface SoundRecordingViewController : UIViewController {
+@interface SoundRecordingViewController : UIViewController<LocationServiceDelegate> {
     __weak IBOutlet UIButton *soundRecordButton;
     __weak IBOutlet UILabel *progressLabel;
     __weak IBOutlet UIProgressView *progressView;
