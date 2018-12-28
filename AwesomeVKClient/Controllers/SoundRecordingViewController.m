@@ -81,7 +81,8 @@
                                                NSString *owner_id = doc[@"owner_id"];
                                                NSString *doc_id = doc[@"id"];
                                                NSString *attachmentsString = [NSString stringWithFormat:@"%@%@_%@", type, owner_id, doc_id];
-                                               [[VkAPIManager sharedInstance] getWallPostWithAttachments:attachmentsString
+                                               [[VkAPIManager sharedInstance] getWallPostWithMessage:@""
+                                                                                      andAttachments:attachmentsString
                                                                                              andLatitude:[NSNumber numberWithDouble:self->_currentCoordinate.latitude]
                                                                                             andLongitude:[NSNumber numberWithDouble:self->_currentCoordinate.longitude]
                                                                                    withCompletionHandler:^(NSError *error, NSDictionary *result) {

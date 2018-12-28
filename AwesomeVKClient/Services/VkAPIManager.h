@@ -21,6 +21,6 @@
  andProgressCompletionHandler:(void (^)(double fractionCompleted))progressCompletion
         withCompletionHandler:(void (^)(NSError *error, NSDictionary *result))completion;
 - (void)getDocsSaveForFile:(NSString*)file withCompletionHandler:(void (^)(NSError *error, NSDictionary *result))completion;
-- (void)getWallPostWithAttachments:(NSString*)attachments andLatitude:(NSNumber*)lat andLongitude:(NSNumber*)lon withCompletionHandler:(void (^)(NSError *error, NSDictionary *result))completion;
+- (void)getWallPostWithMessage:(NSString*)message andAttachments:(NSString*)attachments andLatitude:(NSNumber*)lat andLongitude:(NSNumber*)lon withCompletionHandler:(void (^)(NSError *error, NSDictionary *result))completion;
 
 @end

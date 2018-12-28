@@ -19,7 +19,7 @@
         self.delegate = self;
         self.distanceFilter = kCLDistanceFilterNone;
         self.desiredAccuracy = kCLLocationAccuracyBest;
-        [self requestWhenInUseAuthorization];
+        [self requestAlwaysAuthorization];
         _locationFetchCounter = 0;
     }
     

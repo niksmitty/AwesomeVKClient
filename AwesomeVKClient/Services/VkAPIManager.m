@@ -115,12 +115,12 @@ static NSString * const VKAPIMethodSuffix = @"method/";
     }];
 }
 
-- (void)getWallPostWithAttachments:(NSString*)attachments andLatitude:(NSNumber*)lat andLongitude:(NSNumber*)lon withCompletionHandler:(void (^)(NSError *error, NSDictionary *result))completion {
+- (void)getWallPostWithMessage:(NSString*)message andAttachments:(NSString*)attachments andLatitude:(NSNumber*)lat andLongitude:(NSNumber*)lon withCompletionHandler:(void (^)(NSError *error, NSDictionary *result))completion {
     NSString *urlPart = [NSString stringWithFormat:@"%@wall.post?", VKAPIMethodSuffix];
     NSString *fullUrlString = [NSString stringWithFormat:@"%@access_token=%@&v=%@", urlPart, _accessToken, apiVersion];
     NSString *escapedUrlString = [fullUrlString stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLFragmentAllowedCharacterSet]];
     
-    [self GET:escapedUrlString parameters:@{@"message": @"", @"attachments": attachments, @"lat": lat, @"long": lon} progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    [self GET:escapedUrlString parameters:@{@"message": message, @"attachments": attachments, @"lat": lat, @"long": lon} progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSMutableDictionary *newResponse = [NSMutableDictionary dictionaryWithDictionary:(NSDictionary*)responseObject];
         if (completion)
             completion(nil, newResponse);
