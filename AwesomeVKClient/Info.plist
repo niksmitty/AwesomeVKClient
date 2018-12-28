@@ -2,8 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>This application requires constant access to your device’s location to notify you when you enter or leave a geofence</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>This application wants to use your location</string>
+	<string>This application requires constant access to your device’s location to notify you when you enter or leave a geofence</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>This application wants to use your microphone</string>
 	<key>CFBundleDevelopmentRegion</key>

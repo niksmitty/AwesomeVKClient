@@ -156,9 +156,76 @@
                     <view key="view" contentMode="scaleToFill" id="Noy-3A-60X">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введите latitude..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UPo-Bu-yUY">
+                                <rect key="frame" x="10" y="229" width="300" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введите longitude..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8ez-s8-oHf">
+                                <rect key="frame" x="10" y="269" width="300" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введите radius..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gsm-ZJ-2uK">
+                                <rect key="frame" x="10" y="309" width="300" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e7G-96-BES">
+                                <rect key="frame" x="10" y="518" width="94" height="30"/>
+                                <state key="normal" title="Подписаться">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="subscribeButtonTapped:" destination="nMM-p4-Mjg" eventType="touchUpInside" id="ZeD-Z1-TQp"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6fB-mB-RpQ">
+                                <rect key="frame" x="226" y="518" width="84" height="30"/>
+                                <state key="normal" title="Отписаться">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="unsubscribeButtonTapped:" destination="nMM-p4-Mjg" eventType="touchUpInside" id="46e-Cu-tff"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KjB-bg-F9l">
+                                <rect key="frame" x="160" y="544" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="e7G-96-BES" firstAttribute="leading" secondItem="bSQ-ea-dz5" secondAttribute="leading" constant="10" id="3uy-v5-Mdj"/>
+                            <constraint firstItem="8ez-s8-oHf" firstAttribute="centerX" secondItem="Noy-3A-60X" secondAttribute="centerX" id="5tu-fs-iaK"/>
+                            <constraint firstItem="bSQ-ea-dz5" firstAttribute="trailing" secondItem="6fB-mB-RpQ" secondAttribute="trailing" constant="10" id="Afa-qc-wFG"/>
+                            <constraint firstItem="8ez-s8-oHf" firstAttribute="top" secondItem="UPo-Bu-yUY" secondAttribute="bottom" constant="10" id="OnE-VW-wpe"/>
+                            <constraint firstItem="KjB-bg-F9l" firstAttribute="centerX" secondItem="Noy-3A-60X" secondAttribute="centerX" id="dIk-Wg-N8S"/>
+                            <constraint firstItem="8ez-s8-oHf" firstAttribute="centerY" secondItem="Noy-3A-60X" secondAttribute="centerY" id="ew3-mT-PWO"/>
+                            <constraint firstItem="UPo-Bu-yUY" firstAttribute="centerX" secondItem="Noy-3A-60X" secondAttribute="centerX" id="f20-CU-Fb5"/>
+                            <constraint firstItem="bSQ-ea-dz5" firstAttribute="bottom" secondItem="e7G-96-BES" secondAttribute="bottom" constant="20" id="gjT-qR-1Yg"/>
+                            <constraint firstItem="UPo-Bu-yUY" firstAttribute="leading" secondItem="bSQ-ea-dz5" secondAttribute="leading" constant="10" id="j01-Nf-mfN"/>
+                            <constraint firstItem="gsm-ZJ-2uK" firstAttribute="centerX" secondItem="Noy-3A-60X" secondAttribute="centerX" id="mGl-3T-tSZ"/>
+                            <constraint firstItem="gsm-ZJ-2uK" firstAttribute="top" secondItem="8ez-s8-oHf" secondAttribute="bottom" constant="10" id="r8r-6b-Mpn"/>
+                            <constraint firstItem="8ez-s8-oHf" firstAttribute="leading" secondItem="bSQ-ea-dz5" secondAttribute="leading" constant="10" id="wgi-hg-feM"/>
+                            <constraint firstItem="bSQ-ea-dz5" firstAttribute="bottom" secondItem="6fB-mB-RpQ" secondAttribute="bottom" constant="20" id="wpI-6Z-ccf"/>
+                            <constraint firstItem="gsm-ZJ-2uK" firstAttribute="leading" secondItem="bSQ-ea-dz5" secondAttribute="leading" constant="10" id="zNh-A4-Ooi"/>
+                            <constraint firstItem="bSQ-ea-dz5" firstAttribute="bottom" secondItem="KjB-bg-F9l" secondAttribute="bottom" constant="24" id="ztu-Vt-mUA"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="bSQ-ea-dz5"/>
                     </view>
+                    <connections>
+                        <outlet property="geofencesCountLabel" destination="KjB-bg-F9l" id="8Sp-5k-Ghb"/>
+                        <outlet property="latitudeTextField" destination="UPo-Bu-yUY" id="XS5-Q7-2Qk"/>
+                        <outlet property="longitudeTextField" destination="8ez-s8-oHf" id="ryM-Se-7gg"/>
+                        <outlet property="radiusTextField" destination="gsm-ZJ-2uK" id="Tyw-HD-k98"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mNK-ua-IhE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

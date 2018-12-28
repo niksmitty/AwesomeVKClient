@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LocationService.h"
 
-@interface GeofenceViewController : UIViewController
+@interface GeofenceViewController : UIViewController<LocationServiceDelegate> {
+    __weak IBOutlet UITextField *latitudeTextField;
+    __weak IBOutlet UITextField *longitudeTextField;
+    __weak IBOutlet UITextField *radiusTextField;
+    __weak IBOutlet UILabel *geofencesCountLabel;
+}
 
 @end

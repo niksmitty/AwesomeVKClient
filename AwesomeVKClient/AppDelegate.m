@@ -7,15 +7,24 @@
 //
 
 #import "AppDelegate.h"
+#import "VkAPIManager.h"
 
 @interface AppDelegate ()
 
 @end
 
-@implementation AppDelegate
+@implementation AppDelegate {
+    CLLocationManager *locationManager;
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    locationManager = [[CLLocationManager alloc] init];
+    locationManager.delegate = self;
+    locationManager.distanceFilter = kCLDistanceFilterNone;
+    locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    [locationManager requestAlwaysAuthorization];
     
     //FOR DEBUG ONLY!!!
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
@@ -45,6 +54,35 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (void)handleEventForRegion:(CLRegion*)region withMessage:(NSString*)message {
+    CLCircularRegion *reg = (CLCircularRegion*)region;
+    double latitude = reg.center.latitude;
+    double longitude = reg.center.longitude;
+    double radius = reg.radius;
+    
+    NSString *fullMessage = [NSString stringWithFormat:@"%@ %f, %f, %f", message, latitude, longitude, radius];
+    
+    [[VkAPIManager sharedInstance] getWallPostWithMessage:fullMessage
+                                           andAttachments:@""
+                                              andLatitude:@(latitude)
+                                             andLongitude:@(longitude)
+                                    withCompletionHandler:^(NSError *error, NSDictionary *result) {}];
+}
+
+#pragma mark - CLLocationManagerDelegate
+
+- (void)locationManager:(CLLocationManager *)manager didEnterRegion:(CLRegion *)region {
+    if ([region isKindOfClass:[CLCircularRegion class]]) {
+        [self handleEventForRegion:region withMessage:@"Вход в"];
+    }
+}
+
+- (void)locationManager:(CLLocationManager *)manager didExitRegion:(CLRegion *)region {
+    if ([region isKindOfClass:[CLCircularRegion class]]) {
+        [self handleEventForRegion:region withMessage:@"Выход из"];
+    }
 }
 
 @end
